@@ -8,6 +8,7 @@ import br.agner.receitas.R
 import br.agner.receitas.api.RetrofitClient
 import br.agner.receitas.api.UserAPI
 import br.agner.receitas.model.User
+import br.agner.receitas.utils.MyDialog
 import kotlinx.android.synthetic.main.activity_registry.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,6 +42,7 @@ class RegistryActivity : AppCompatActivity() {
                     } else {
                         Log.i("TAG", "Erro ao salvar!")
                         Log.i("TAG", response?.errorBody()?.charStream()?.readText())
+                        messageDialog(R.string.registry_error)
                     }
                 }
 
@@ -50,7 +52,12 @@ class RegistryActivity : AppCompatActivity() {
             })
         } else {
             Log.i("TAG", "Senha não confere!")
+            messageDialog(R.string.wrong_password)
         }
+    }
+
+    fun messageDialog(msgId : Int) {
+        MyDialog.messageDialog(this, msgId)
     }
 
 }

@@ -29,4 +29,5 @@
     <string name="prompt_recipe_filter">Buscar Receita</string>
     <string name="prompt_developer">Desenvolvedor</string>
     <string name="prompt_version">Versão 1.0</string>
+    <string name="registry_error">O usuário não pode ser registro, talvez o login já tenha sido registrado!</string>
 </resources>
